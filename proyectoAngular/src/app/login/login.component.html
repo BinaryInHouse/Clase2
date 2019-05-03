@@ -1,0 +1,26 @@
+<form *ngIf='this.ocultar'>
+<input type="text" (input)="capturar1($event.target.value)">
+<br>
+<input type="password" (input)="capturar2($event.target.value)">
+<br>
+<button type="button" (click)="ingresar()">Ingresar</button>
+
+<button type="button" (click)="this.ocultar=!this.ocultar">Registrar</button>
+
+</form>
+
+<br>
+<form *ngIf='!this.ocultar'>
+  <label>Registro: </label>
+  <br>
+  <input type="text" (input)="nombre($event.target.value)">
+  <br>
+  <input type="text" (input)="apellido($event.target.value)">
+  <br>
+  <button type="button" (click)="this.ocultar=!this.ocultar">Login</button>
+
+</form>
+
+<ul>
+  <li *ngFor="let receta of recetas">{{receta.plato}}</li>
+</ul>
